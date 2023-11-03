@@ -1,0 +1,26 @@
+namespace: local
+
+deployment:
+  type: blue
+  image:
+    repository: aergoscan/front
+    tag: "2.4.0"
+  containers:
+    default:
+      ports:
+        http: 80
+      readinessProbe:
+        initialDelaySeconds: 10
+        periodSeconds: 5
+      livenessProbe:
+        initialDelaySeconds: 10
+        periodSeconds: 5
+
+service:
+  type: ClusterIP
+  port:
+    http: 80
+
+env:
+  ARG_AERGO_NODE_HOST: http://local-api-http.aergo.io
+  ARG_API_URL: http://api2-local.aergoscan.io

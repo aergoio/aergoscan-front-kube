@@ -1,0 +1,6 @@
+apiVersion: v2
+name: aergoscan-front
+description: A Helm chart for aergoscan front
+type: application
+version: 0.0.1
+appVersion: "2.4.0"
