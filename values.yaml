@@ -20,7 +20,3 @@ service:
   type: ClusterIP
   port:
     http: 80
-
-env:
-  ARG_AERGO_NODE_HOST: http://local-api-http.aergo.io
-  ARG_API_URL: http://api2-local.aergoscan.io
