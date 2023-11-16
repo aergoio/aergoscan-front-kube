@@ -23,7 +23,9 @@ spec:
       containers:
         - name: {{ .Release.Name }}
           image: {{ .Values.deployment.image.repository }}:{{ .Values.deployment.image.tag }}
+  {{- if ne .Values.namespace "local" }}
           imagePullPolicy: Always
+  {{- end }}
           ports:
             - name: "http"
               containerPort: {{ .Values.deployment.containers.default.ports.http }}
